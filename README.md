@@ -1,3 +1,7 @@
+Forked from: https://github.com/UsaidPro/BevyLotsOfSystems
+- Upgraded to Bevy 0.13.2;
+- Minor changes to decrease compile time;
+
 ## Stress-test testing lots of Systems running in Bevy
 #### Why?
 I have a use-case where I need several simultaneous identical groups of entities running in parallel (same logic/systems, just independent of each other).

@@ -1,17 +1,15 @@
-use proc_macro::{TokenStream};
-use quote::{quote};
+use proc_macro::TokenStream;
+use quote::quote;
 use syn::{parse::Parse, parse_macro_input, Expr};
 
 struct MacroInput {
-    a: Expr
+    a: Expr,
 }
 
 impl Parse for MacroInput {
     fn parse(input: syn::parse::ParseStream) -> syn::Result<Self> {
         let a = input.parse()?;
-        Ok(Self {
-            a: a,
-        })
+        Ok(Self { a: a })
     }
 }
 
@@ -32,3 +30,4 @@ pub fn simulations(tokens: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let gen = quote! {#(#arguments)*};
     TokenStream::from(gen)
 }
+
